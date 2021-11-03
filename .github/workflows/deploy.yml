@@ -6,9 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: everphone-gmbh/cancel-previous-workflows@v5
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - uses: n1hility/cancel-previous-runs@v2
+        with: 
+          token: ${{ github.token }}
       - uses: actions/checkout@v2
         with:
           repository: jainamoswal/groupManager
