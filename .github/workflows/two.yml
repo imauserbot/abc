@@ -2,7 +2,7 @@ name: Run the bot (2)
 
 on:
   workflow_run:
-    workflows: ["Run the bot (2)"]
+    workflows: ["Run the bot (1)"]
     types:
       - completed
 
