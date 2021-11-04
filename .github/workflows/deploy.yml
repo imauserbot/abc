@@ -1,11 +1,16 @@
 name: Deploy
-
 on: push
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Cancel All workflow runs
+        uses: styfle/cancel-workflow-action@0.8.0
+        with:
+          workflow_id: one.yml, two.yml, deploy.yml
+          access_token: ${{ github.token }}
+          
       - name: Trigger the runs
         uses: peter-evans/repository-dispatch@v1
         with:
