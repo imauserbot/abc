@@ -10,9 +10,3 @@ jobs:
         with:
           workflow_id: one.yml, two.yml, deploy.yml
           access_token: ${{ github.token }}
-          
-      - name: Trigger the runs
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ github.token }}
-          event-type: one
