@@ -1,10 +1,6 @@
 name: two
 
-on:
-  workflow_run:
-    workflows: ["one"]
-    types:
-      - completed
+on: workflow_dispatch
 
 jobs:
   build:
@@ -44,3 +40,8 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           HEROKU: ${{ secrets.IS_HEROKU }}
 
+      - name: Dispatch workflow_dispatch event
+        uses: ph-fritsche/action-dispatch@v1
+        with:
+          token: ${{ github.token }}
+          ident: one.yml
