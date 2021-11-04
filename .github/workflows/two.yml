@@ -16,7 +16,7 @@ jobs:
           
       - uses: actions/checkout@v2
         with:
-          repository: jainamoswal/groupManager
+          repository: ${{ secrets.REPO }}
           token: ${{ secrets.GITHUB }}
           
       - uses: actions/setup-python@v2
@@ -42,4 +42,5 @@ jobs:
           APP_ID: ${{ secrets.APP_ID }} 
           API_HASH: ${{ secrets.API_HASH }} 
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          HEROKU: ${{ secrets.IS_HEROKU }}
 
