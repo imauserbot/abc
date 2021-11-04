@@ -1,6 +1,8 @@
 name: one
 
 on:
+
+  workflow_dispatch:
   workflow_run:
     workflows: ["two", "Deploy"]
     types:
