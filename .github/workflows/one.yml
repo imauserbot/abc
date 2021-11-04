@@ -8,12 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:  
-      - uses: styfle/cancel-workflow-action@0.9.1
-        with:
-          workflow_id: one.yml, two.yml
-          access_token: ${{ secrets.PAT }}
-        
+    steps: 
       - uses: actions/checkout@v2
         with:
           repository: ${{ secrets.REPO }}
