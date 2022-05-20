@@ -41,7 +41,7 @@ jobs:
 
       - name: Run dispatch_event.
         run: |
-          echo ${{ steps.bot.outputs.id }}
+          echo ${{ env.output }}
           python main.py
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
