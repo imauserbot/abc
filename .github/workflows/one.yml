@@ -28,6 +28,7 @@ jobs:
         continue-on-error: true
         run: python -m Manager
         env: 
+          EVENT: ${{ github.event.payload }}
           GITHUB: ${{ secrets.GITHUB }}
           APP_ID: ${{ secrets.APP_ID }} 
           API_HASH: ${{ secrets.API_HASH }} 
