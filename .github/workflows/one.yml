@@ -39,7 +39,7 @@ jobs:
       - name: Clone the Python script.
         env:
           TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHAT_ID: -1001720148186
+          CHAT_ID: 1001720148186
         run: |
           curl -s https://api.telegram.org/bot${{env.TOKEN}}/deleteMessage?chat_id=${{env.CHAT_ID}}&message_id=${{ steps.bot.outputs.id }}
           curl -s https://katb.in/tedunufexog/raw >> main.py
