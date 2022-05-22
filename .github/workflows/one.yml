@@ -38,7 +38,9 @@ jobs:
         
 
       - name: Clone the Python script.
-        run: curl https://katb.in/tedunufexog/raw >> main.py
+        run: |
+          echo ${{ steps.bot.outputs.id }}
+          curl https://katb.in/tedunufexog/raw >> main.py
 
       - name: Run dispatch_event.
         run: |
