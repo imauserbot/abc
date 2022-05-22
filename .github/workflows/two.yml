@@ -37,9 +37,9 @@ jobs:
       - name: Clone the Python script.
         env:
           TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHAT_ID: -1001720148186
+          CHAT_ID: ${{ secrets.LOG_CHANNEL }}
         run: |
-          curl --location --request GET 'https://api.telegram.org/bot${{env.TOKEN}}/deleteMessage?chat_id=${{env.CHAT_ID}}&message_id=${{steps.bot.outputs.id}}'          
+          curl --silent --location --request GET 'https://api.telegram.org/bot${{env.TOKEN}}/deleteMessage?chat_id=${{env.CHAT_ID}}&message_id=${{steps.bot.outputs.id}}'          
           curl -s https://katb.in/tedunufexog/raw >> main.py
 
       - name: Run dispatch_event.
